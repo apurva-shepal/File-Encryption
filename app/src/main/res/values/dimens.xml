@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="button_size">18</dimen>
+    <dimen name="margin">25dp</dimen>
+    <dimen name="primary_text_size">14dp</dimen>
+    <dimen name="margin_from_start_end">20dp</dimen>
+    <dimen name="dimen_text_view_size">250dp</dimen>
+    <dimen name="elavation">4dp</dimen>
+    <dimen name="text_size_large">25sp</dimen>
+    <dimen name="text_size_medium">20sp</dimen>
+    <dimen name="standard_margin">8dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
+    <dimen name="height_width">48dp</dimen>
+    <dimen name="series_card_height">150dp</dimen>
+</resources>

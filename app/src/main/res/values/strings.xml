@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Video Encoder</string>
+    <string name="start_decryption">Decryption File</string>
+    <string name="start_encryption">Encrypt File</string>
+    <string name="encrypted_files">Encrypted Files:</string>
+    <string name="aes">AES</string>
+    <string name="blowfish">Blowfish</string>
+</resources>

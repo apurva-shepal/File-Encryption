@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/encrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_encryption"
+        app:layout_constraintBottom_toTopOf="@id/encryptedFileName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioLayout"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <LinearLayout
+        android:id="@+id/radioLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintBottom_toTopOf="@id/encrypt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/selectEncryptionAlgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_weight="0.5"
+            android:text="Encryption algorithm:"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintBottom_toTopOf="@id/encrypt"
+            app:layout_constraintEnd_toStartOf="@id/radioalgo"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioalgo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/encrypt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/selectEncryptionAlgo"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/aesAlgo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aes"
+                android:checked="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_medium" />
+
+            <RadioButton
+                android:id="@+id/blowfishAlgo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blowfish"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_medium" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/encryptedFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected FileName:"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toTopOf="@id/tvEncryptedFileList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/encrypt" />
+
+<!--    <Button-->
+<!--        android:id="@+id/decrypt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/margin_top"-->
+<!--        android:text="@string/start_decryption"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/tvEncryptedFileList"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/encryptedFileName" />-->
+
+    <TextView
+        android:id="@+id/tvEncryptedFileList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin"
+        android:padding="4dp"
+        android:text="@string/encrypted_files"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintBottom_toTopOf="@id/recycleview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/encryptedFileName" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEncryptedFileList"
+        tools:listitem="@layout/layout_item_file" />
+
+    <!--    <com.google.android.exoplayer2.ui.SimpleExoPlayerView-->
+    <!--        android:id="@+id/video_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="200dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
